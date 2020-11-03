@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+}
+
+button {
+    cursor: pointer;
+}
+
+.item {
+    position: relative;
+    cursor: pointer;
+}
+
+.item.active::after {
+    width: 100%;
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: red;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+}
+
+.todoList {
+    background: #ffff;
+    padding: 50px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.todoList ul {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.todoList ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
